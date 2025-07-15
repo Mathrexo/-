@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Your Results</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        .result-card {
+            background: #f8f8f8;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Your Medical Results</h1>
+    <div id="resultsContainer"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const selections = JSON.parse(localStorage.getItem('medicalSelections'));
+            const container = document.getElementById('resultsContainer');
+
+            if (selections) {
+                container.innerHTML = `
+                    <p><strong>Doctor Type:</strong> ${selections.doctor}</p>
+                    <p><strong>Illness:</strong> ${selections.illness}</p>
+                    <p><strong>Wilaya:</strong> ${selections.wilaya}</p>
+                    <div class="result-card">
+                        <h3>Recommended Doctors:</h3>
+                        <p>Dr. Example Name - Example Hospital</p>
+                        <!-- In a real app, these would come from your backend -->
+                    </div>
+                `;
+            } else {
+                container.innerHTML = '<p>No results found. Please start over.</p>';
+            }
+        });
+    </script>
+</body>
+
+</html>

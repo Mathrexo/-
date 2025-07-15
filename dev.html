@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhyaa Latrech | Front-End Developer & Hafid</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Amiri:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3a0ca3;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gold: #ffd700;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+
+        .title {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .divider {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            margin: 1.5rem auto;
+            border-radius: 2px;
+        }
+
+        .about-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50%;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .skill-tag {
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .quran-section {
+            background: linear-gradient(135deg, #3a0ca3 0%, #4361ee 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 3rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .quran-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+        }
+
+        .arabic {
+            font-family: 'Amiri', serif;
+            font-size: 1.8rem;
+            line-height: 1.8;
+            margin: 1.5rem 0;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--dark);
+            color: white;
+            border-radius: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .about-section {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img src="C:\Users\hp\Downloads\ChatGPT Image Apr 1, 2025, 12_05_22 AM.png" alt="Dhyaa Latrech"
+                class="profile-image">
+            <h1>Dhyaa Latrech</h1>
+            <p class="title">Front-End Developer & Hafid of the Quran</p>
+            <div class="divider"></div>
+            <p>Creating beautiful digital experiences while holding the Quran close to my heart</p>
+        </header>
+
+        <section class="about-section">
+            <div class="about-developer">
+                <h2 class="section-title">Front-End Developer</h2>
+                <p>With a passion for creating intuitive and visually stunning web experiences, I specialize in crafting
+                    responsive and accessible websites using modern technologies.</p>
+                <p>My approach combines technical expertise with an eye for design, ensuring that every project not only
+                    functions flawlessly but also delivers an exceptional user experience.</p>
+
+                <h3 style="margin-top: 2rem;">Technical Skills</h3>
+                <div class="skills">
+                    <span class="skill-tag">HTML5</span>
+                    <span class="skill-tag">CSS3</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Vue.js</span>
+                    <span class="skill-tag">SASS</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">Responsive Design</span>
+                </div>
+            </div>
+
+            <div class="about-hafid">
+                <h2 class="section-title">Quran Hafid</h2>
+                <p>Beyond my technical skills, I carry the honor of being a Hafid of the Holy Quran, having memorized
+                    all 114 surahs with proper tajweed.</p>
+                <p>This spiritual journey has instilled in me discipline, patience, and a deep appreciation for the
+                    beauty of the Arabic language - qualities that enhance my professional work.</p>
+
+                <div style="margin-top: 2rem;">
+                    <h3>Favorite Ayah</h3>
+                    <p class="arabic">وَمَن يَتَّقِ اللَّهَ يَجْعَل لَّهُ مَخْرَجًا</p>
+                    <p>"And whoever fears Allah - He will make for him a way out." (At-Talaq 65:2)</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="quran-section">
+            <div class="quran-icon">🕋</div>
+            <h2 class="section-title" style="color: white;">My Quran Journey</h2>
+            <p>Memorizing the Quran has been the most transformative experience of my life. It taught me discipline,
+                perseverance, and the value of consistent effort - qualities I bring to every coding project.</p>
+            <p class="arabic">وَلَقَدْ يَسَّرْنَا ٱلْقُرْءَانَ لِلذِّكْرِ فَهَلْ مِن مُّدَّكِرٍ</p>
+            <p>"And We have certainly made the Quran easy for remembrance, so is there any who will remember?" (Al-Qamar
+                54:17)</p>
+        </section>
+
+        <h2 class="section-title" style="text-align: center;">Featured Projects</h2>
+        <div class="projects">
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                    alt="Project 1" class="project-image">
+                <div class="project-info">
+                    <h3 class="project-title">Islamic Learning Platform</h3>
+                    <p>A responsive web app for Quran study with interactive features and progress tracking.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                    alt="Project 2" class="project-image">
+                <div class="project-info">
+                    <h3 class="project-title">Mosque Finder App</h3>
+                    <p>Location-based application to find nearby mosques and prayer times.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                    alt="Project 3" class="project-image">
+                <div class="project-info">
+                    <h3 class="project-title">E-commerce Dashboard</h3>
+                    <p>Modern admin dashboard for managing online stores with analytics.</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <h3>Connect With Me</h3>
+            <p>Let's collaborate on meaningful projects that combine technology and purpose.</p>
+            <div class="social-links">
+                <a href="#" class="social-link">GitHub</a>
+                <a href="" class="social-link">LinkedIn</a>
+                <a href="https://x.com/Mathrexo" class="social-link">X</a>
+                <a href="https://www.instagram.com/math_rexo/" class="social-link">Instagram</a>
+            </div>
+            <p style="margin-top: 2rem;">&copy; 2025 Dhyaa Latrech. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+
+</html>

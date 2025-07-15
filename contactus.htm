@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أطباء الجزائر | تواصل معنا</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6a3093;
+            --secondary: #a044ff;
+            --accent: #f5a623;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --text: #333;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8f4f8 100%);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .contact-section {
+            background-color: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 50px 0;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: var(--secondary);
+            opacity: 0.1;
+            border-radius: 50%;
+        }
+
+        .contact-section::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: var(--primary);
+            opacity: 0.05;
+            border-radius: 50%;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            width: 70%;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .contact-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(106, 48, 147, 0.15);
+        }
+
+        .contact-card h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-card h3 i {
+            margin-left: 10px;
+            color: var(--secondary);
+        }
+
+        .contact-info {
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info i {
+            width: 25px;
+            color: var(--secondary);
+            margin-left: 10px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.1) translateY(-5px);
+            background: linear-gradient(to right, var(--secondary), var(--primary));
+        }
+
+        .address-card {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(106, 48, 147, 0.3);
+        }
+
+        .address-card h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .address-card p {
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .address-card i {
+            margin-left: 10px;
+            font-size: 1.2rem;
+            color: var(--accent);
+        }
+
+        .map-container {
+            margin-top: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            height: 300px;
+            background: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: var(--dark);
+            color: white;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">أطباء <span>الجزائر</span></div>
+            <p>نحو رعاية صحية أفضل للجميع</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="contact-section">
+            <h2 class="section-title">تواصل معنا</h2>
+            <p>يسعدنا تواصلكم معنا لأي استفسارات أو مقترحات</p>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3><i class="fas fa-envelope"></i> البريد الإلكتروني</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-at"></i>Algeriandrdz@gmail.com</p>
+                        <p><i class="fas fa-inbox"></i> A.b.h-boxjebell7lfa.dz</p>
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <h3><i class="fas fa-users"></i> فريق المطورين</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-user"></i> ضياء لطرش: latrechfamilycomputer@gmail.com</p>
+                        <p><i class="fas fa-user"></i> معاذ مخلوف: moath@algerian-doctors.dz</p>
+
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+
+                <div class="address-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> عنواننا</h3>
+                    <p><i class="fas fa-road"></i> حي زرارة السعيد، عين البيضاء</p>
+                    <p><i class="fas fa-city"></i> ميلة، الجزائر</p>
+                    <p><i class="fas fa-phone"></i> 123 456 7890+</p>
+                    <p><i class="fas fa-clock"></i> من السبت إلى الخميس: 8 ص - 5 م</p>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <p>خريطة الموقع ستظهر هنا</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2023 منصة أطباء الجزائر</p>
+    </footer>
+
+    <script>
+        // Animation for contact cards
+        document.addEventListener('DOMContentLoaded', function () {
+            const cards = document.querySelectorAll('.contact-card');
+
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'all 0.5s ease ' + (index * 0.1) + 's';
+
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100);
+            });
+
+            // Social media hover effect
+            const socialLinks = document.querySelectorAll('.social-links a');
+            socialLinks.forEach(link => {
+                link.addEventListener('mouseenter', function () {
+                    this.querySelector('i').style.transform = 'scale(1.2)';
+                });
+                link.addEventListener('mouseleave', function () {
+                    this.querySelector('i').style.transform = 'scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام البحث عن الأطباء</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Jaro:opsz@6..72&family=Lalezar&family=Playpen+Sans+Arabic:wght@100..800&family=Reem+Kufi+Ink&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: "Amiri", serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        select,
+        button {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .doctor-card {
+            background: #f9f9f9;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .no-results {
+            color: #d32f2f;
+            text-align: center;
+        }
+
+        #serverStatus {
+            margin-top: 20px;
+            padding: 10px;
+            background: #e1f5fe;
+            border-radius: 4px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>البحث عن أطباء في الجزائر</h1>
+
+        <div class="form-group">
+            <select name="doctors"
+                style="width: 200px; padding: 8px; margin: 5px; background: #f0f0f0; border: 1px solid #ccc; border-radius: 4px;">
+                <option value="">Select Doctor</option>
+                <option value="cardiologist">Cardiologist</option>
+                <option value="dentist">Dentist</option>
+                <option value="dermatologist">Dermatologist</option>
+                <option value="gp">General Practitioner</option>
+                <option value="neurologist">Neurologist</option>
+            </select>
+
+            <div class="form-group">
+                <select name="ill"
+                    style="width: 200px; padding: 8px; margin: 5px; background: #f0f0f0; border: 1px solid #ccc; border-radius: 4px;">
+                    <option value="">Select Illness</option>
+                    <option value="allergy">Allergy</option>
+                    <option value="asthma">Asthma</option>
+                    <option value="diabetes">Diabetes</option>
+                    <option value="hypertension">Hypertension</option>
+                    <option value="migraine">Migraine</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select name="wilaya"
+                    style="width: 200px; padding: 8px; margin: 5px; background: #f0f0f0; border: 1px solid #ccc; border-radius: 4px;">
+                    <option value="">Select Wilaya</option>
+                    <option value="1">Adrar</option>
+                    <option value="2">Chlef</option>
+                    <option value="3">Laghouat</option>
+                    <option value="4">Oum El Bouaghi</option>
+                    <option value="5">Batna</option>
+                    <option value="6">Béjaïa</option>
+                    <option value="7">Biskra</option>
+                    <option value="8">Béchar</option>
+                    <option value="9">Blida</option>
+                    <option value="10">Bouira</option>
+                    <option value="11">Tamanrasset</option>
+                    <option value="12">Tébessa</option>
+                    <option value="13">Tlemcen</option>
+                    <option value="14">Tiaret</option>
+                    <option value="15">Tizi Ouzou</option>
+                    <option value="16">Algiers</option>
+                    <option value="17">Djelfa</option>
+                    <option value="18">Jijel</option>
+                    <option value="19">Sétif</option>
+                    <option value="20">Saïda</option>
+                    <option value="21">Skikda</option>
+                    <option value="22">Sidi Bel Abbès</option>
+                    <option value="23">Annaba</option>
+                    <option value="24">Guelma</option>
+                    <option value="25">Constantine</option>
+                    <option value="26">Médéa</option>
+                    <option value="27">Mostaganem</option>
+                    <option value="28">M'Sila</option>
+                    <option value="29">Mascara</option>
+                    <option value="30">Ouargla</option>
+                    <option value="31">Oran</option>
+                    <option value="32">El Bayadh</option>
+                    <option value="33">Illizi</option>
+                    <option value="34">Bordj Bou Arréridj</option>
+                    <option value="35">Boumerdès</option>
+                    <option value="36">El Tarf</option>
+                    <option value="37">Tindouf</option>
+                    <option value="38">Tissemsilt</option>
+                    <option value="39">El Oued</option>
+                    <option value="40">Khenchela</option>
+                    <option value="41">Souk Ahras</option>
+                    <option value="42">Tipaza</option>
+                    <option value="43">Mila</option>
+                    <option value="44">Aïn Defla</option>
+                    <option value="45">Naâma</option>
+                    <option value="46">Aïn Témouchent</option>
+                    <option value="47">Ghardaïa</option>
+                    <option value="48">Relizane</option>
+                    <option value="49">El M'Ghair</option>
+                    <option value="50">El Menia</option>
+                    <option value="51">Ouled Djellal</option>
+                    <option value="52">Bordj Badji Mokhtar</option>
+                    <option value="53">Béni Abbès</option>
+                    <option value="54">Timimoun</option>
+                    <option value="55">Touggourt</option>
+                    <option value="56">Djanet</option>
+                    <option value="57">In Salah</option>
+                    <option value="58">In Guezzam</option>
+                </select>
+            </div>
+            <button id="searchBtn">ابحث عن طبيب</button>
+
+            <div id="results" class="results-container"></div>
+
+            <div id="serverStatus">محاكاة السيرفر تعمل</div>
+        </div>
+
+        <script>
+            // Mock database
+            const doctorsDB = {
+                "16": { // Algiers
+                    "cardiologist": [
+                        { name: "د. أحمد زيتوني", hospital: "مستشفى مصطفى باشا", phone: "0550123456" },
+                        { name: "د. ليلى منصوري", hospital: "عيادة الأزهر", phone: "0551123456" }
+                    ],
+                    "dentist": [
+                        { name: "د. كريم بودياف", clinic: "عيادة سمايل لطب الأسنان", phone: "0552123456" }
+                    ]
+                },
+                "31": { // Oran
+                    "cardiologist": [
+                        { name: "د. عمر شنافي", hospital: "مستشفى وهران الجامعي", phone: "0553123456" }
+                    ]
+                }
+            };
+
+            // Frontend functionality
+            document.getElementById('searchBtn').addEventListener('click', () => {
+                const specialty = document.getElementById('specialty').value;
+                const wilaya = document.getElementById('wilaya').value;
+
+                if (!specialty || !wilaya) {
+                    alert('الرجاء اختيار التخصص والولاية');
+                    return;
+                }
+
+                // Simulate server request delay
+                document.getElementById('serverStatus').style.display = 'block';
+
+                setTimeout(() => {
+                    // Mock server response
+                    const response = mockServerRequest(specialty, wilaya);
+                    displayResults(response);
+                    document.getElementById('serverStatus').style.display = 'none';
+                }, 800);
+            });
+
+            // Mock server function
+            function mockServerRequest(specialty, wilaya) {
+                if (!doctorsDB[wilaya] || !doctorsDB[wilaya][specialty]) {
+                    return {
+                        success: false,
+                        message: "لا يوجد أطباء متطابقون مع بحثك"
+                    };
+                }
+
+                return {
+                    success: true,
+                    doctors: doctorsDB[wilaya][specialty]
+                };
+            }
+
+            // Display results
+            function displayResults(data) {
+                const resultsDiv = document.getElementById('results');
+                if (data.success) {
+                    resultsDiv.innerHTML = data.doctors.map(doctor => `
+                    <div class="doctor-card">
+                        <h3>${doctor.name}</h3>
+                        <p>${doctor.hospital || doctor.clinic}</p>
+                        <p>الهاتف: <strong>${doctor.phone}</strong></p>
+                    </div>
+                `).join('');
+                } else {
+                    resultsDiv.innerHTML = `<p class="no-results">${data.message}</p>`;
+                }
+            }
+
+            // Node.js server simulation (for educational purposes)
+            console.log(`
+        // لو كنت تريد سيرفر حقيقي، هذا هو كود Node.js:
+        const express = require('express');
+        const app = express();
+        const port = 3000;
+
+        app.use(express.json());
+
+        // قاعدة البيانات ستكون هنا
+        const doctorsDB = ${JSON.stringify(doctorsDB, null, 2)};
+
+        app.post('/api/search-doctors', (req, res) => {
+            const { specialty, wilaya } = req.body;
+            
+            if (!doctorsDB[wilaya] || !doctorsDB[wilaya][specialty]) {
+                return res.json({
+                    success: false,
+                    message: "No doctors found"
+                });
+            }
+
+            res.json({
+                success: true,
+                doctors: doctorsDB[wilaya][specialty]
+            });
+        });
+
+        app.listen(port, () => {
+            console.log('Server running on port', port);
+        });
+        `);
+        </script>
+</body>
+
+</html>

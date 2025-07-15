@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أطباء الجزائر | تسجيل الدخول</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-container">
+            <!-- Logo in Circle -->
+            <div class="logo-circle">
+                <img src="C:\Users\hp\Downloads\أطباء.png" alt="أطباء الجزائر" id="logo">
+            </div>
+
+            <!-- Toggle between Login & Signup -->
+            <div class="toggle-btns">
+                <button class="toggle-btn active" id="loginBtn">تسجيل الدخول</button>
+                <button class="toggle-btn" id="signupBtn">إنشاء حساب</button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="loginForm" class="form">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="اسم المستخدم أو البريد الإلكتروني" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="كلمة المرور" required>
+                </div>
+                <button type="submit" class="submit-btn">دخول</button>
+                <a href="#" class="forgot-password">نسيت كلمة المرور؟</a>
+            </form>
+
+            <!-- Signup Form (Hidden by Default) -->
+            <form id="signupForm" class="form hidden">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="الاسم الكامل" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="البريد الإلكتروني" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="كلمة المرور" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="تأكيد كلمة المرور" required>
+                </div>
+                <button type="submit" class="submit-btn">إنشاء حساب</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
